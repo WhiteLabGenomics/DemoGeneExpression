@@ -173,10 +173,13 @@ function ui()
 end
 
 function launch()
-  port = rand(8000:9000)
+    port = rand(8000:9000)
 
-  @info "http://localhost:$port"
-  WebIO.webio_serve(page("/", req -> ui()), port) # serve on a random port
+    @info "http://localhost:$port"
+    (; 
+        task = WebIO.webio_serve(page("/", req -> ui()), port),
+        url  = "http://localhost:$port"
+    )
 end
 
 end # module
