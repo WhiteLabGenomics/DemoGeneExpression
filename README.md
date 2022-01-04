@@ -6,4 +6,4 @@ To install do:
 
 To run do:
 
-```julia --project -E"using Expert1; Expert1.launch()" -i```
+```julia --project -E"using DemoGeneExpression; DemoGeneExpression.launch()" -i```
